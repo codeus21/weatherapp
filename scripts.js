@@ -1,7 +1,14 @@
 const cityInput = document.getElementById("cityInput");
 const weatherBox = document.getElementById("weatherBox");
 const apiKey = "fbf7cb72862cfcf4f9951be617a30db1";
-const inputSection = getElementById("inputSection");
+const inputSection = document.getElementById("inputSection");
+
+// Add event listener for Enter key
+cityInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        getWeather();
+    }
+});
 
 async function getWeather(){
     const city = cityInput.value;
